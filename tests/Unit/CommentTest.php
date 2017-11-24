@@ -17,6 +17,6 @@ class CommentTest extends TestCase
         // Giving comment object
         $comment = factory('App\Comment')->create();
         // should include User object 
-        $this->assertInstanceOf('App\User',$comment->creator); // I expect creator function has User instance
+        $this->assertInstanceOf('App\User',$comment->creator); 
     }
 }

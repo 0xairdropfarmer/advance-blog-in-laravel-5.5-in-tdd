@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog','PostsController@index');
+Route::get('/blog','PostsController@index')->name('blog');
 Route::get('/blog/{post}','PostsController@show');
 Auth::routes();
-
+Route::post('/blog/{post}/comment','CommentController@store')->name('addcomment');
 Route::get('/home', 'HomeController@index')->name('home');

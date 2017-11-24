@@ -13,4 +13,6 @@ class PostsController extends Controller
     public function show(Post $post){
         return view('post.show')->with(['post'=>$post]);
     }
+    
+  
 }
