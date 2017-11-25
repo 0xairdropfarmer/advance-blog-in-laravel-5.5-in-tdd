@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/blog','PostsController@index')->name('blog');
+Route::view('/blog/create','post.create')->middleware('auth');
 Route::get('/blog/{post}','PostsController@show');
+Route::post('/post','PostsController@store');
 Auth::routes();
 Route::post('/blog/{post}/comment','CommentController@store')->name('addcomment');
 Route::get('/home', 'HomeController@index')->name('home');
